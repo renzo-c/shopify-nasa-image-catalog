@@ -41,6 +41,7 @@
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.6",
     "@mui/styles": "^5.2.3",
+    "axios": "^0.24.0",
     "clsx": "^1.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
