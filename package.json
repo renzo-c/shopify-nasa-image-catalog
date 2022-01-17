@@ -1,0 +1,50 @@
+{
+  "name": "shopify-nasa-image-catalog",
+  "version": "1.0.0",
+  "description": "shopify challenge 2022",
+  "main": "index.js",
+  "author": "Renzo Navarro <rcnavarrop@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "webpack serve --config build-utils/webpack.config.js --env env=dev",
+    "build": "webpack --config build-utils/webpack.config.js --env env=prod",
+    "build:analyze": "yarn build addon=bundleanalyze"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "dotenv-webpack": "^7.0.3",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.5.0",
+    "source-map-loader": "^3.0.1",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.66.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "^5.2.6",
+    "@mui/styles": "^5.2.3",
+    "clsx": "^1.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
