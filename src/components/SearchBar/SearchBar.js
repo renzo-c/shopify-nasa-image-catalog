@@ -7,9 +7,9 @@ import { Card } from '../';
 
 const SearchBar = () => {
   const classes = useStyles();
-  const [term, setTerm] = useState('apollo');
+  const [term, setTerm] = useState('a');
   const [results, setResults] = useState([]);
-console.log({results})
+
   useEffect(() => {
     const callSearchAPI = async () => {
       const { data } = await nasaAPI.get('search', {
@@ -21,8 +21,18 @@ console.log({results})
       setResults(data.collection.items);
     };
 
-    if (term) {
-      callSearchAPI();
+    if(term && !results.length) {
+      callSearchAPI
+    }
+
+    const timeoutId = setTimeout(() => {
+      if (term) {
+        callSearchAPI();
+      }
+    }, 500)
+    
+    return () => {
+      clearTimeout(timeoutId)
     }
   }, [term]);
 
