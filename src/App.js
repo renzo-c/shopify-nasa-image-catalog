@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
-import { Wrapper, SearchBar, HeroImage } from './components';
-import spacestagramHero from './assets/images/page-search-hero.jpg';
+import React from 'react';
+import { Search } from './pages';
+import { Wrapper } from './components';
 
 const App = () => {
   console.log(process.env.NODE_ENV);
 
   return (
     <Wrapper>
-      <HeroImage altDescription="spacestagram-hero" imageUrl={spacestagramHero} />
-      <SearchBar />
+      <Search />
     </Wrapper>
   );
 };

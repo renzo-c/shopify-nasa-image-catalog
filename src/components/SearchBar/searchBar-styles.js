@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     maxWidth: '584px',
     margin: 'auto'
   },
-  searchBar: {}
+  searchBar: {},
 });
 
 export default useStyles;

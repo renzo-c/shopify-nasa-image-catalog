@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: (props) => props.color,
+    // backgroundColor: (props) => props.color,
     zIndex: -10
   }
 });

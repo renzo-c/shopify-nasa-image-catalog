@@ -3,12 +3,10 @@ import useStyles from './searchBar-styles';
 import { TextField, Grid, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import nasaAPI from '../../api';
-import { Card } from '../';
 
-const SearchBar = () => {
+const SearchBar = ({results, setResults}) => {
   const classes = useStyles();
-  const [term, setTerm] = useState('a');
-  const [results, setResults] = useState([]);
+  const [term, setTerm] = useState('');
 
   useEffect(() => {
     const callSearchAPI = async () => {
@@ -21,32 +19,25 @@ const SearchBar = () => {
       setResults(data.collection.items);
     };
 
-    if(term && !results.length) {
-      callSearchAPI
+    if (term && !results.length) {
+      callSearchAPI;
     }
 
     const timeoutId = setTimeout(() => {
       if (term) {
         callSearchAPI();
       }
-    }, 500)
-    
+    }, 300);
+
     return () => {
-      clearTimeout(timeoutId)
-    }
+      clearTimeout(timeoutId);
+    };
   }, [term]);
 
   const onChangeValue = (e) => {
     const { value } = e.target;
     setTerm(value);
   };
-
-  const renderResults = () =>
-    results.map((item, idx) => {
-      const imageURL = item.links[0].href;
-      const imageData = item.data[0];
-      return <Card key={idx} imageData={imageData} imageURL={imageURL} />;
-    });
 
   return (
     <Grid container className={classes.root}>
@@ -66,7 +57,6 @@ const SearchBar = () => {
           }}
         />
       </Grid>
-      {renderResults()}
     </Grid>
   );
 };
