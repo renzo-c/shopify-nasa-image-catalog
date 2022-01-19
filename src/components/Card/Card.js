@@ -11,7 +11,7 @@ import {
   Typography,
   Link
 } from '@mui/material';
-import { PlaceHolder as ImagePlaceHolder, Dialog } from '../';
+import { PlaceHolder, Dialog } from '../';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ShareIcon from '@mui/icons-material/Share';
 import useStyles, { styles } from './card-styles';
@@ -66,7 +66,7 @@ const Card = ({ imageURL, imageData }) => {
         }
       />
       <div style={{ width: '100%' }}>
-        {imageLoaded ? null : <ImagePlaceHolder />}
+        {imageLoaded ? null : <PlaceHolder />}
         <LazyLoadImage
           alt={descriptionStd}
           src={imageURL}

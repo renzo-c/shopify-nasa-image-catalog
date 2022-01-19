@@ -13,4 +13,5 @@ const PlaceHolder = () => {
     </div>
   );
 };
+
 export default PlaceHolder;
