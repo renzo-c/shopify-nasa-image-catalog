@@ -2,10 +2,8 @@ import React from 'react';
 import {
   Dialog as DialogMUI,
   DialogContent,
-  DialogContentText,
   DialogTitle,
   IconButton,
-  LinkTypeMap
 } from '@mui/material';
 import SettingsOverscanIcon from '@mui/icons-material/SettingsOverscan';
 

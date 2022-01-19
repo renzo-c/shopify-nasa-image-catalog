@@ -11,27 +11,13 @@ import {
   Typography,
   Link
 } from '@mui/material';
-import Dialog from '../Dialog';
+import { Dialog, PlaceHolder as ImagePlaceHolder } from './subcomponents';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ShareIcon from '@mui/icons-material/Share';
 import useStyles, { styles } from './card-styles';
 import { wasImageLiked, textClamp } from '../../assets/helperFunctions';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Skeleton } from '@mui/material';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-
-const PlaceHolder = () => {
-  return (
-    <div style={{ padding: '1em', position: 'relative' }}>
-      <Skeleton
-        variant="rectangular"
-        width="100%"
-        height="300px"
-        style={{ position: 'absolute', top: 0, left: 0 }}
-      />
-    </div>
-  );
-};
 
 const Card = ({ imageURL, imageData }) => {
   const classes = useStyles();
@@ -80,7 +66,7 @@ const Card = ({ imageURL, imageData }) => {
         }
       />
       <div style={{ width: '100%' }}>
-        {imageLoaded ? null : <PlaceHolder />}
+        {imageLoaded ? null : <ImagePlaceHolder />}
         <LazyLoadImage
           alt={descriptionStd}
           src={imageURL}
