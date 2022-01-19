@@ -1,7 +1,7 @@
 import React from 'react';
 import { Skeleton } from '@mui/material';
 
-const Placeholder = () => {
+const PlaceHolder = () => {
   return (
     <div style={{ padding: '1em', position: 'relative' }}>
       <Skeleton
@@ -13,4 +13,4 @@ const Placeholder = () => {
     </div>
   );
 };
-export default Placeholder;
+export default PlaceHolder;
