@@ -2,7 +2,7 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
   root: {
-    padding: '3em'
+    padding: '1em'
   },
   html: {
     position: 'absolute',

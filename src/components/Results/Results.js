@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from '../';
-import Box from '@mui/material/Box';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import { Card, GhostyCard } from '../';
+import { Box, ImageList, ImageListItem, Grid } from '@mui/material';
 import { BREAKPOINTS } from '../../assets/constants';
 
 const Results = ({ results }) => {
@@ -12,8 +10,8 @@ const Results = ({ results }) => {
     window.addEventListener('resize', updateGalleryGrid);
     window.addEventListener('load', updateGalleryGrid);
     return () => {
-      window.removeEventListener('resize', updateGalleryGrid)
-      window.removeEventListener('load', updateGalleryGrid)
+      window.removeEventListener('resize', updateGalleryGrid);
+      window.removeEventListener('load', updateGalleryGrid);
     };
   }, []);
 
@@ -26,11 +24,30 @@ const Results = ({ results }) => {
       const imageURL = item.links[0].href;
       const imageData = item.data[0];
       return (
-        <ImageListItem variant="masonry" key={idx} cols={3} gap={8} sx={{ width: '100%' }}>
+        <ImageListItem variant="masonry" key={idx} sx={{ width: '100%' }}>
           <Card imageData={imageData} imageURL={imageURL} />;
         </ImageListItem>
       );
     });
+
+  const renderLoader = () => {
+    return (
+      <Grid container justifyContent="space-around" mt={4} spacing={1}>
+        <Grid item xs={12} sm={6} md={3}>
+          <GhostyCard />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <GhostyCard />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <GhostyCard />
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <GhostyCard />
+        </Grid>
+      </Grid>
+    );
+  };
 
   const calcCols = (width) => {
     if (width <= BREAKPOINTS.mobile) {
@@ -45,12 +62,12 @@ const Results = ({ results }) => {
   };
 
   if (!columns) {
-    return <div>...Loading</div>;
+    return renderLoader();
   }
 
   return (
     <Box>
-      <ImageList variant="masonry" cols={columns} gap={8} sx={{padding: "1em"}}>
+      <ImageList variant="masonry" cols={columns} gap={8} sx={{ padding: '1em' }}>
         {renderResults()}
       </ImageList>
     </Box>

@@ -3,3 +3,6 @@ export const wasImageLiked = (id) => {
   return res;
 };
 
+export const textClamp = (str, maxLen) => {
+  return str.length > maxLen ? str.substring(0, maxLen) + '...' : str;
+};
