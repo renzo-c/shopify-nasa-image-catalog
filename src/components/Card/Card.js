@@ -13,6 +13,8 @@ import {
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import useStyles, { styles } from './card-styles';
 import { wasImageLiked } from '../../assets/helperFunctions';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Card = ({ imageURL, imageData }) => {
   const classes = useStyles();
@@ -41,7 +43,7 @@ const Card = ({ imageURL, imageData }) => {
   };
 
   return (
-    <CardMUI sx={styles} raised className={classes.root} >
+    <CardMUI sx={styles} raised className={classes.root}>
       <CardHeader
         title={<Typography variant="h6">{title}</Typography>}
         subheader={
@@ -50,7 +52,10 @@ const Card = ({ imageURL, imageData }) => {
           </Typography>
         }
       />
-      <CardMedia component="img" image={imageURL} alt={descriptionStd} width="200" />
+      <div style={{ width: '100%' }}>
+        <LazyLoadImage alt={descriptionStd} src={imageURL} width="100%" effect="blur" />
+      </div>
+      {/* <CardMedia component="img" image={imageURL} alt={descriptionStd} width="200" /> */}
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {descriptionStd.length > 150 ? (
