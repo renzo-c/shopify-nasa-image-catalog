@@ -5,7 +5,7 @@ const useStyles = makeStyles({
       margin: '2em 0'
   },
   imgContainer: {
-    width: '500px',
+    width: '250px',
     margin: 'auto'
   },
   img: {

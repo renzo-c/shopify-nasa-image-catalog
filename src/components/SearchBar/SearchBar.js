@@ -6,7 +6,7 @@ import nasaAPI from '../../api';
 
 const SearchBar = ({results, setResults}) => {
   const classes = useStyles();
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState('moon');
 
   useEffect(() => {
     const callSearchAPI = async () => {

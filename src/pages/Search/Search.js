@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SearchBar, Results, HeroImage } from '../../components';
-import spacestagramHero from '../../assets/images/page-search-hero.jpg';
+import spacestagramHero from '../../assets/images/spacetagram.jpg';
 
 const Search = () => {
   const [results, setResults] = useState([]);
