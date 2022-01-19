@@ -11,14 +11,27 @@ import {
   Typography,
   Link
 } from '@mui/material';
-import PlaceHolder from '../PlaceHolder';
 import Dialog from '../Dialog';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ShareIcon from '@mui/icons-material/Share';
 import useStyles, { styles } from './card-styles';
 import { wasImageLiked, textClamp } from '../../assets/helperFunctions';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Skeleton } from '@mui/material';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+
+const PlaceHolder = () => {
+  return (
+    <div style={{ padding: '1em', position: 'relative' }}>
+      <Skeleton
+        variant="rectangular"
+        width="100%"
+        height="300px"
+        style={{ position: 'absolute', top: 0, left: 0 }}
+      />
+    </div>
+  );
+};
 
 const Card = ({ imageURL, imageData }) => {
   const classes = useStyles();
